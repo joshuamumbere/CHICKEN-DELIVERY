@@ -1,0 +1,38 @@
+MDBoxLayout:
+    name: "ten"
+    orientation: "vertical"
+    MDTopAppBar:
+        title: "KoKo Chicken"
+        left_action_items: [["menu"]]
+        elevation: 4
+    MDLabel:
+        text: "Available Items"
+        halign: "center"
+    MDLabel:
+        id: item
+        text: "No Items are available now"
+        halign: "center"
+    MDTextField:
+        id: item_name
+        hint_text: "Enter Item name"
+        multline: False
+    MDTextField:
+        id: fname
+        hint_text: "Enter Your name"
+        multline: True
+    MDTextField:
+        id: lname
+        hint_text: "Enter Your Address"
+        multline: True
+    MDTextField:
+        id: contact
+        hint_text: "Enter your contact"
+        multline: False
+    MDRectangleFlatButton:
+        text: "Submit Order"
+        size_hint:(1,.5)
+        on_press: app.submit()
+    MDRectangleFlatButton:
+        text: "Show Items"
+        size_hint:(1,.5)
+        on_press: app.show_users()

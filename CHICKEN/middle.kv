@@ -1,0 +1,47 @@
+MDScreen:
+    name:"starter"
+    MDFloatLayout:
+        md_bg_color: 41/255, 135/255, 168/255, 1
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_x":.1,"center_y":.95}
+        on_release: 
+            app.root.current = "first"
+            app.root.transition.direction = "right"
+
+    Image:
+        source:"pexels-lukas-616354.jpg"
+        size_hint: .5, .5
+        pos_hint: {"center_x": .5, "center_y": .6}
+        canvas.before:
+
+    MDLabel:
+        text: "Koko Chicken"
+        font_style: "H3"
+        font_name: 'Bisect.otf'
+        halign: "center"
+        pos_hint: {"center_x": .5, "center_y": .45}
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1
+
+    MDLabel:
+        text: "Delivering fresh chicken"
+        font_style: "H6"
+        font_name: 'Bebas-Regular.ttf'
+        halign: "center"
+        pos_hint: {"center_x": .5, "center_y": .35}
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1
+
+    MDFlatButton:
+        text: "Get Started"
+        pos_hint: {"center_x": .5, "center_y": .25}
+        text_color: 0, 0, 0, 1
+        md_bg_color: 1,1,1,1
+        size_hint_y: None
+        height: 100
+        on_release: 
+            app.root.current = "third"
+            app.root.transition.direction = "left"
+
+    

@@ -1,0 +1,16 @@
+MDScreen:
+    name: "cart"
+    orientation: 'horizontal'
+
+
+    Button:
+        text: 'Remove'
+        on_release: root.third()
+
+    Button:
+        text: "go back"
+        background_color:(0,0,1,1)
+        font_size: 12
+        on_release:
+            app.root.current="third"
+            root.manager.transition.direction="down"

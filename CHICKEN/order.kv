@@ -1,0 +1,19 @@
+MDScreen:
+    name: "ten"
+    MDFloatLayout:
+        md_bg_color: 41/255, 135/255, 168/255, 1
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_x":.1,"center_y":.95}
+        on_release: 
+            app.root.current = "third"
+            app.root.transition.direction = "right"
+    MDLabel:
+        text: "You Have Ordered The Following Items"
+        font_size: "38dp"
+        halign: "center"
+        color: 1,1,1,1
+        pos_hint: {'center_y':.8}
+           
+    
+        

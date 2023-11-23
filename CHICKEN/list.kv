@@ -1,0 +1,72 @@
+MDScreen:
+    name: "third"
+    MDFloatLayout:
+        md_bg_color: 41/255, 135/255, 168/255, 1
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_x":.1,"center_y":.95}
+        on_release: 
+            app.root.current = "starter"
+            app.root.transition.direction = "top"
+
+
+    ScrollView:
+        
+        MDList:
+            ThreeLineListItem:
+                id: item1
+                text: "Half Fried Chicken"
+                secondary_text: "50% Discount"
+                tertiary_text: "25,000 ugx"
+                on_release: app.show_alert_dialog(item1)
+        
+            ThreeLineListItem:
+                id: item2
+                text: "Full Fried Chicken"
+                secondary_text: "Full price"
+                tertiary_text: "50,000 ugx"
+                on_release: app.show_alert_dialog(item2)
+                on_press: 
+
+            ThreeLineListItem:
+                id: item3
+                text: "One Piece Chicken"
+                secondary_text: "25%"
+                tertiary_text: "10,000 ugx"
+                on_release: app.show_alert_dialog(item3)
+
+            ThreeLineListItem:
+                id: item4
+                text: "A bucket of One piece"
+                secondary_text: "Half Price"
+                tertiary_text: "35,000 ugx"
+                on_release: app.show_alert_dialog(item4)
+
+            ThreeLineListItem:
+                id: item5
+                text: "Eggs"
+                secondary_text: "Full Tray"
+                tertiary_text: "15,000 ugx"
+                on_release: app.show_alert_dialog(item5)
+
+            ThreeLineListItem:
+                id: item6
+                text: "Eggs"
+                secondary_text: "Half Tray"
+                tertiary_text: "6,500 ugx"
+                on_release: app.show_alert_dialog(item6)
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: "5dp"
+
+        MDRaisedButton:
+            text: "Proceed To Make Order"
+            pos_hint: {"center_x": .5, "center_y": .1}
+            on_release: 
+                app.root.current = "ten"
+                app.manager.transition.direction = "left"
+
+
+
+   

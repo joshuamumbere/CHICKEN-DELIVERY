@@ -1,0 +1,64 @@
+MDScreen:
+    name: "first"
+    FitImage:
+        source: "pexels-valeria-boltneva-1123249.jpg"
+        pos_hint: {'center_x':.5,'center_y':.5}
+    MDLabel:
+        text: "Sign up Here"
+        font_size: "48dp"
+        halign: "center"
+        color: 1,1,1,1
+        pos_hint: {'center_y':.8}
+    MDTextField:
+        hint_text: "User Name"
+        icon_right: 'account'
+        color_mode: 1,1,1,1
+        font_size: "20dp"
+        size_hint_x: .85
+        pos_hint:{'center_x':.5,'center_y':.65}
+        on_text: self.text=self.text.replace("","")
+        write_tab: False
+    MDTextField:
+        id: pswd
+        hint_text: "Password"
+        color_mode: 1,1,1,1
+        password: True
+        icon_right: 'eye-off'
+        font_size: "20dp"
+        size_hint_x: .85
+        pos_hint:{'center_x':.5,'center_y':.5}
+        on_text: self.text=self.text.replace("","")
+        write_tab: False
+    BoxLayout:
+        size_hint: .85, None
+        height: "30dp"
+        pos_hint: {'center_x':.5,'center_y':.4}
+        spacing: "5dp"
+        MDCheckbox:
+            id: cb
+            size_hint: None, None
+            color: 1 , 1 , 1 , 1
+            height: "30dp"
+            width: "30dp"
+            pos_hint: {'center_x':.5,'center_y':.5}
+        MDLabel:
+            text: "[ref=show Password]show Password[/ref]"
+            color: 1,1,1,1
+            markup: True
+            pos_hint: {'center_x':.5,'center_y':.5}
+    BoxLayout:
+        size_hint: .6, None
+        height: "30dp"
+        pos_hint: {'center_x':.5,'center_y':.3}
+        spacing: "15dp"
+        MDFlatButton:
+            text: "SIGN IN"
+            font_size: "22dp"
+            size_hint_x: 1
+            md_bg_color: 1,1,1,1
+            on_release:
+                app.root.current="second"
+                root.manager.transition.direction="right"
+
+
+

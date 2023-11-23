@@ -1,0 +1,25 @@
+MDScreen:
+    name: "item"
+    orientation: 'vertical'
+    
+
+    AsyncImage:
+        source: root.item_image
+        size_hint: None, None
+        size: "100dp", "100dp"
+        allow_stretch: True
+        keep_ratio: False
+        pos_hint: {'center_x': 0.5}
+
+
+    Button:
+        text: 'Select'
+        on_release: root.fourth()
+
+    Button:
+        text: "go to Viewcart"
+        background_color:(0,0,1,1)
+        font_size: 12
+        on_release:
+            app.root.current="fourth"
+            root.manager.transition.direction="left"
