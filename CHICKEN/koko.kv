@@ -29,6 +29,7 @@ MDScreen:
         pos_hint: {'center_x': .5, 'center_y': .5}
         on_text: self.text = self.text.replace("", "")
         write_tab: False
+        on_icon_right: app.toggle_password_visibility(pswd, cb)
 
     BoxLayout:
         size_hint: .85, None

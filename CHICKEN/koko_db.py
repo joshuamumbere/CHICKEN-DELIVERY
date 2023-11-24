@@ -50,6 +50,8 @@ class MyApp(MDApp):
         con.commit()
         con.close()
 
+    def toggle_password_visibility(self, password_field, checkbox):
+        password_field.password = not checkbox.active
 
 if __name__ == "__main__":
     MyApp().run()
