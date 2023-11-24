@@ -18,19 +18,7 @@ MDScreen:
         pos_hint:{'center_x':.5,'center_y':.65}
         on_text: self.text=self.text.replace("","")
         write_tab: False
-    MDTextField:
-        id: pswd
-        hint_text: "Password"
-        color_mode: 1, 1, 1, 1
-        password: not cb.active  # Toggle password visibility
-        icon_right: 'eye-off'
-        font_size: "20dp"
-        size_hint_x: .85
-        pos_hint: {'center_x': .5, 'center_y': .5}
-        on_text: self.text = self.text.replace("", "")
-        write_tab: False
-        on_icon_right: app.toggle_password_visibility(pswd, cb)
-
+    
     BoxLayout:
         size_hint: .85, None
         height: "30dp"
@@ -48,6 +36,21 @@ MDScreen:
             color: 1,1,1,1
             markup: True
             pos_hint: {'center_x':.5,'center_y':.5}
+
+    MDTextField:
+        id: pswd
+        hint_text: "Password"
+        color_mode: 1, 1, 1, 1
+        password: not cb.active  # Toggle password visibility
+        icon_right: 'eye-off'
+        font_size: "20dp"
+        size_hint_x: .85
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        on_text: self.text = self.text.replace("", "")
+        write_tab: False
+        on_icon_right: app.toggle_password_visibility(pswd, cb)
+
+
     BoxLayout:
         size_hint: .6, None
         height: "30dp"
