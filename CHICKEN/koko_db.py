@@ -9,26 +9,24 @@ Window.size = (350, 600)
 class MyApp(MDApp):
     def build(self):
         con = sqlite3.connect("users.db")
-       
+
         c = con.cursor()
-        c.execute("CREATE TABLE if not exists Items(item_name text)"),
+        c.execute("CREATE TABLE if not exists Items(item_name text)")
         c.execute("CREATE TABLE if not exists users(fname text,lname text, contact text)")
-        con.commit()
-        con.close()
+
+        c.commit()
+        c.close()
         db_display = Builder.load_file("koko_db.kv")
         return db_display
 
     def submit(self):
         con = sqlite3.connect("users.db")
         c = con.cursor()
-        c.execute("INSERT INTO users VALUES (:fname,:lname,:contact)",
-                  
-                  {
-                      "item_name": self.root.ids.item_name.text,
-                      "name": self.root.ids.name.text,
-                       "address": self.root.ids.address.text,
-                       "contact": self.root.ids.contact.text,     }
-                  )
+        c.execute("INSERT INTO users VALUES (:fname, :lname, :contact)", {
+    "fname": self.root.ids.name.text,
+    "lname": self.root.ids.lname.text,
+    "contact": self.root.ids.contact.text,
+})
         self.root.ids.item.text = f'{self.root.ids.fname.text} has been added'
         # self.root.ids.item.text = "item successfully inserted into db"
         self.root.ids.item_name.text = ""
